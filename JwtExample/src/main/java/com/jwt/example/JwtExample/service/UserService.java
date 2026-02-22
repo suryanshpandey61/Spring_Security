@@ -18,4 +18,8 @@ public class UserService {
       userList.add(new User(UUID.randomUUID().toString(),"Anubhav Tiwari","anubhav@dev.com"));
       userList.add(new User(UUID.randomUUID().toString(),"Gaurav Mishra","gaurav@yahoo.com"));
     }
+
+    public List<User> getUserList(){
+        return userList;
+    }
 }
