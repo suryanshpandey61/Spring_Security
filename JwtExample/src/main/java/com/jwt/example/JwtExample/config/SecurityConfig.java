@@ -17,22 +17,22 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthenticationEntryPoint entryPoint;
 
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity){
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 
         //configuration
         httpSecurity.csrf(csrf -> csrf.disable())
-                .cors(cors->cors.disable())
+                .cors(cors -> cors.disable())
                 .authorizeHttpRequests(
-                        auth->auth.requestMatchers("/home/**")
-                        .authenticated()
-                        .requestMatchers("/auth/login").permitAll()
+                        auth -> auth.requestMatchers("/home/**")
+                                .authenticated()
+                                .requestMatchers("/auth/login").permitAll()
                 )
-                .exceptionHandling(ex->ex.authenticationEntryPoint(entryPoint))
-                .sessionManagement(session-> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .exceptionHandling(ex -> ex.authenticationEntryPoint(entryPoint))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         ;
 
-        httpSecurity.addFilterBefore(filter,UsernamePasswordAuthenticationFilter.class);
-        
+        httpSecurity.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+
         return httpSecurity.build();
     }
 
