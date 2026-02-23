@@ -28,4 +28,6 @@ public class HomeController {
         return principal.getName();
     }
 
+    
+
 }
