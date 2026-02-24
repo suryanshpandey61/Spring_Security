@@ -7,6 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JwtResponse {
-    private String email;
-    private String password;
+    private String token;
+    private String username;
 }
