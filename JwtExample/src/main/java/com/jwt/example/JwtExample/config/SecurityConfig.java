@@ -3,6 +3,7 @@ package com.jwt.example.JwtExample.config;
 import com.jwt.example.JwtExample.security.JwtAuthenticationEntryPoint;
 import com.jwt.example.JwtExample.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -17,6 +18,7 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthenticationEntryPoint entryPoint;
 
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 
         //configuration
