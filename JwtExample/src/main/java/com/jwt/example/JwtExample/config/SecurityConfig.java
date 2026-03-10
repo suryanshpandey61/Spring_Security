@@ -21,7 +21,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 
-        //configuration
+        //config
         httpSecurity.csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.disable())
                 .authorizeHttpRequests(
@@ -32,9 +32,7 @@ public class SecurityConfig {
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(entryPoint))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         ;
-
         httpSecurity.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
-
         return httpSecurity.build();
     }
 
