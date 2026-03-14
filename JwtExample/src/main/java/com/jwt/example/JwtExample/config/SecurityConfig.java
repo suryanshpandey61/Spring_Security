@@ -36,6 +36,7 @@ public class SecurityConfig {
                         auth -> auth.requestMatchers("/home/**")
                                 .authenticated()
                                 .requestMatchers("/auth/login").permitAll()
+                                .requestMatchers("/auth/create-user").permitAll()
                 )
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(entryPoint))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
