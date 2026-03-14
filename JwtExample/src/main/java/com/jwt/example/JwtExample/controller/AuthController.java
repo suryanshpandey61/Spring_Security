@@ -65,7 +65,7 @@ public class AuthController {
         return "Credentials Invalid !!";
     }
 
-    @PostMapping("/createUser")
+    @PostMapping("/create-user")
     public User createUser(@RequestBody User user){
        return  userService.createUser(user);
     }
