@@ -10,7 +10,6 @@ import java.util.UUID;
 @Service
 public class UserService {
 
-    private List<User> userList = new ArrayList<>();
 
 
 
