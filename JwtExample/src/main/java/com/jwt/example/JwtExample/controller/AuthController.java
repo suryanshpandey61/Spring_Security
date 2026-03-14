@@ -1,8 +1,10 @@
 package com.jwt.example.JwtExample.controller;
 
+import com.jwt.example.JwtExample.entities.User;
 import com.jwt.example.JwtExample.model.JwtRequest;
 import com.jwt.example.JwtExample.model.JwtResponse;
 import com.jwt.example.JwtExample.security.JwtHelper;
+import com.jwt.example.JwtExample.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class AuthController {
     private AuthenticationManager manager;
     @Autowired
     private JwtHelper jwtHelper;
+
+    @Autowired
+    UserService userService;
 
     private Logger logger = LoggerFactory.getLogger(AuthController.class);
 
@@ -60,7 +65,10 @@ public class AuthController {
         return "Credentials Invalid !!";
     }
 
-
+    @PostMapping("/createUser")
+    public User createUser(@RequestBody User user){
+       return  userService.createUser(user);
+    }
 
 
 }
