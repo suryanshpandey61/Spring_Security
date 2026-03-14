@@ -1,6 +1,6 @@
 package com.jwt.example.JwtExample.controller;
 
-import com.jwt.example.JwtExample.model.User;
+import com.jwt.example.JwtExample.entities.User;
 import com.jwt.example.JwtExample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
