@@ -25,9 +25,10 @@ public class User implements UserDetails {
     private String password;
     private String about;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return List.of();
     }
 
     @Override
